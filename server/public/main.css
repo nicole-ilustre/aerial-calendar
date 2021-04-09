@@ -1,0 +1,41 @@
+body {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto
+}
+.btn-img {
+    width:30px;
+    height:30px;
+    padding:1px
+}
+
+.img-display {
+    justify-content: center;
+    display:flex;
+    align-items: center
+}
+
+.captions, .input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
+    display:block;
+    align-items: center
+}
+
+.submit {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-vote {
+    width:30px;
+    height:30px;
+    padding:1px;
+    display:inline;
+}
+
+button, label {
+    margin-left: 5px;
+    margin-right: 5px
+}

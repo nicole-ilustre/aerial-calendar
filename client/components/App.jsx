@@ -1,25 +1,15 @@
-import React, {useState, useEffect} from 'react'
-import {getGreeting} from '../apiClient'
+import React from 'react'
+import { HashRouter as Router, Route } from 'react-router-dom'
+
+import LogIn from './LogIn'
+import Caption from './Caption'
 
 const App = () => {
-
-  const [greeting, setGreeting] = useState('')
-  const [count, setCount] = useState(0)
-
-  useEffect(() => {
-    getGreeting()
-      .then((greeting) => {
-        console.log(greeting)
-        setGreeting(greeting)
-      })
-  }, [count])
-
   return (
-    <>
-    {count}
-    <h1>{greeting}</h1>
-    <button onClick={() => setCount(count + 1)}>Click</button>
-    </>
+    <Router>
+      <Route exact path='/' component={LogIn}></Route>
+      <Route exact path='/caption' component={Caption}></Route>
+    </Router>
   )
 }
 
