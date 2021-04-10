@@ -3,14 +3,14 @@ import React from 'react'
 const LogIn = () => {
   return (
     <div>
-      <h1>Welcome to Caption Contest</h1>
+      <h1>Welcome to your Aerial Calendar</h1>
       <form action="home.html" method="post">
         <div className="input">
-          <label htmlFfor="username">Username:</label>
+          <label htmlfor="username">Username:</label>
           <input id="username" type="text" />
         </div>
         <div className="input">
-          <label htmlFor="password">Password:</label>
+          <label htmlfor="password">Password:</label>
           <input id="password" type="text" />
         </div>
         <div className="input">
