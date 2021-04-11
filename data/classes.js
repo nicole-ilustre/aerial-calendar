@@ -1,6 +1,6 @@
 export default
 {
-  Schedule: [{
+  Schedule: {
     Monday: [{
       title: 'Level 1 Silks',
       teacher: 'Stacey',
@@ -15,9 +15,12 @@ export default
       title: 'Level 1 Hoop',
       teacher: 'Tash',
       description: 'Basic poses and transitions on the hoop'
-    }]
-  },
-  {
+    },
+    {
+      title: 'Not Training',
+      teacher: '',
+      description: 'For rest days'
+    }],
     Tuesday: [{
       title: 'Silks Combos',
       teacher: 'Ruby',
@@ -32,9 +35,12 @@ export default
       title: 'Level 5 Pole',
       teacher: 'Karry',
       description: 'The most advanced pole class. Advance tricks and transitions'
-    }]
-  },
-  {
+    },
+    {
+      title: 'Not Training',
+      teacher: '',
+      description: 'For rest days'
+    }],
     Wednesday: [{
       title: 'Stretch and Flex',
       teacher: 'Rosie',
@@ -49,9 +55,12 @@ export default
       title: 'Handstands',
       teacher: 'Violet',
       description: 'Work on your handstands skills and conditioning'
-    }]
-  },
-  {
+    },
+    {
+      title: 'Not Training',
+      teacher: '',
+      description: 'For rest days'
+    }],
     Thursday: [{
       title: 'Heels Flow',
       teacher: 'Anna',
@@ -66,9 +75,12 @@ export default
       title: 'Hammock Zen',
       teacher: 'Danielle',
       description: 'Time to zen out with a guided meditation on a hhammock'
-    }]
-  },
-  {
+    },
+    {
+      title: 'Not Training',
+      teacher: '',
+      description: 'For rest days'
+    }],
     Friday: [{
       title: 'Twerk',
       teacher: 'Kristyna',
@@ -83,9 +95,12 @@ export default
       title: 'Floorplay',
       teacher: 'Nicole',
       description: 'Learn floorbased tricks and skills and sequences'
-    }]
-  },
-  {
+    },
+    {
+      title: 'Not Training',
+      teacher: '',
+      description: 'For rest days'
+    }],
     Saturday: [{
       title: 'Hula Hoop',
       teacher: 'Olivia',
@@ -100,9 +115,12 @@ export default
       title: 'Hoop Combos',
       teacher: 'Ines',
       description: 'Stitch together tricks and moves on the hoop to beautiful combos'
-    }]
-  },
-  {
+    },
+    {
+      title: 'Not Training',
+      teacher: '',
+      description: 'For rest days'
+    }],
     Sunday: [{
       title: 'Level 1 Pole',
       teacher: 'Noelle',
@@ -117,6 +135,11 @@ export default
       title: 'Hoop Combos',
       teacher: 'Ines',
       description: 'Stitch together tricks and moves on the hoop to beautiful combos'
+    },
+    {
+      title: 'Not Training',
+      teacher: '',
+      description: 'For rest days'
     }]
-  }]
+  }
 }
