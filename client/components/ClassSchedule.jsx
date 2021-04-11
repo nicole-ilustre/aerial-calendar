@@ -13,7 +13,7 @@ const ClassSchedule = () => {
     <div>
       <form id='choose-class'>
         <h4>Please choose your classes for the week.</h4>
-        {days.map((day, i) => { 
+        {days.map((day, i) => {
           return <div><label key={i}>{day[0]}</label> <Class Class={day[1]} /></div>})}
         <button className='btn'>Submit</button>
       </form>

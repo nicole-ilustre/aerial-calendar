@@ -51,8 +51,11 @@ select {
     /* border-bottom: 20px */
 }
 
-tr, td {
+tr, td, h5 {
     border: 1px solid black;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 span {
