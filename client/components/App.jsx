@@ -9,7 +9,7 @@ const App = () => {
   return (
     <Router>
       <Route exact path='/' component={LogIn}></Route>
-      <Route path='/schedule/schedule' component={Schedule}></Route>
+      <Route path='/schedule/booking' component={Schedule}></Route>
       <Route path='/schedule' component={Calendar}></Route>
     </Router>
   )

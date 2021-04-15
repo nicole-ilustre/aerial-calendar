@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react'
-import ClassData from '../../data/classes'
 import ClassDetails from './ClassDetails'
-import getClasses from '../apiClient'
+import { getClasses } from '../apiClient'
 
 const Calendar = () => {
   const classes = getClasses()
 
-  console.log(days)
+  console.log(getClasses())
   return (
     <div>
       <table id='calendar'>
