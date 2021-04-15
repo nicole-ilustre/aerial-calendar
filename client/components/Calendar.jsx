@@ -1,12 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ClassData from '../../data/classes'
 import ClassDetails from './ClassDetails'
+import getClasses from '../apiClient'
 
 const Calendar = () => {
-  function getDays () {
-    return ClassData.Schedule
-  }
-  const days = Object.entries(getDays())
+  const classes = getClasses()
+
   console.log(days)
   return (
     <div>

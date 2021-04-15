@@ -7,7 +7,6 @@ const router = express.Router()
 router.get('/', (req, res) => {
   db.getClasses()
     .then(classes => {
-    console.log('code works')
       return res.json(classes)
     })
     .catch(err => {
