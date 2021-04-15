@@ -1,6 +1,8 @@
 import request from 'superagent'
 
-export function getGreeting() {
-  return request.get('/greeting')
-                .then(res => res.body.greeting)
+const serverURL = 'http://localhost:3000/v1'
+
+export function getClasses() {
+  return request.get(`${serverURL}`)
+    .then(res => res.body)
 }

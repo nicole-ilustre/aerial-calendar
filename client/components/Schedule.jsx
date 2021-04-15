@@ -2,7 +2,7 @@ import React from 'react'
 import ClassData from '../../data/classes'
 import Class from './Class'
 
-const ClassSchedule = () => {
+const Schedule = () => {
   function getDays () {
     return ClassData.Schedule
   }
@@ -22,4 +22,4 @@ const ClassSchedule = () => {
   )
 }
 
-export default ClassSchedule
+export default Schedule
