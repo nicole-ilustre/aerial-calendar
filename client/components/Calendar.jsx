@@ -1,18 +1,20 @@
-import React from 'react'
-import ClassData from '../../data/classes'
-import ClassDetails from './ClassDetails'
+import React, { useEffect, useState } from 'react'
+import { getClasses } from '../apiClient'
 
 const Calendar = () => {
-  function getDays () {
-    return ClassData.Schedule
-  }
-  const days = Object.entries(getDays())
-  console.log(days)
+  const [classes, setClasses] = useState([])
+  useEffect(() => {
+    getClasses()
+      .then(classes => setClasses(classes))
+      .catch(e => console.error(e.message))
+  }, [])
+
   return (
     <div>
       <table id='calendar'>
-        <tr>{days.map((day, i) => <th key={i}>{day[0]}</th>)}</tr>
-        <tr>{days.map((Class, j) => <td><h5><ClassDetails classDetails={Class[1]} /></h5></td>)}</tr>
+        <tr>{classes.map((Class, i) => <th key={i}>{Class.day}</th>)}</tr>
+        <tr>{classes.map((Class) => <td><h5>{Class.title}</h5><span>{Class.description}</span></td>)}</tr>
+        {/* <tr>{days.map((Class, j) => <td><h5><ClassDetails classDetails={Class[1]} /></h5></td>)}</tr> */}
       </table>
     </div>
   )

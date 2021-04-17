@@ -1,25 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const LogIn = () => {
+let userInfo = {}
+
+const LogIn = (props) => {
+  const [loginData, setLoginData] = useState({ username: '' })
+  function handleChange (e) {
+    const newLoginData = {
+      [e.target.name]: e.target.value
+    }
+    setLoginData(newLoginData)
+  }
+
+  function handleSubmit (e) {
+    e.preventDefault()
+    userInfo = loginData
+    props.history.push('/schedule')
+    return null
+  }
   return (
     <div>
       <h1>Welcome to your Aerial Calendar</h1>
-      <form action="home.html" method="post">
+      <form>
         <div className="input">
-          <label htmlfor="username">Username:</label>
-          <input id="username" type="text" />
+          <label htmlFor="username">Username:</label>
+          <input id="username" name="username" value={loginData.username} onChange={handleChange} type="text" />
         </div>
         <div className="input">
-          <label htmlfor="password">Password:</label>
+          <label htmlFor="password">Password:</label>
           <input id="password" type="text" />
         </div>
         <div className="input">
-          <button>Sign Up</button>
-          <button>Log In</button>
+          <button onClick={handleSubmit}>Sign Up</button>
+          <button onClick={handleSubmit}>Log In</button>
         </div>
       </form>
     </div>
   )
 }
 
-export default LogIn
+export { LogIn, userInfo }
