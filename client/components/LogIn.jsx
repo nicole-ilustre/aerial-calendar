@@ -14,7 +14,7 @@ const LogIn = (props) => {
   function handleSubmit (e) {
     e.preventDefault()
     userInfo = loginData
-    props.history.push('/schedule')
+    props.history.push('/schedule/form')
     return null
   }
   return (
