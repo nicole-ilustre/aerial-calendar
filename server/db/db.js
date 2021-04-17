@@ -6,5 +6,5 @@ module.exports = {
 }
 
 function getClasses (db = database) {
-  return db('classes').select('title')
+  return db('classes').select('title', 'teacher', 'description', 'day')
 }
