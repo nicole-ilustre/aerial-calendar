@@ -4,18 +4,8 @@ import { getClasses } from '../apiClient'
 let ClassesBooked = {}
 
 const ScheduleForm = (props) => {
-  const initialData = {
-    Monday: '',
-    Tuesday: '',
-    Wednesday: '',
-    Thursday: '',
-    Friday: '',
-    Saturday: '',
-    Sunday: ''
-  }
-
   const [classes, setClasses] = useState([])
-  const [formData, setFormData] = useState([initialData])
+  const [formData, setFormData] = useState([])
   useEffect(() => {
     getClasses()
       .then(classes => setClasses(classes))
