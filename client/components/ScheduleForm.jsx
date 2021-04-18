@@ -1,17 +1,41 @@
 import React, { useEffect, useState } from 'react'
 import { getClasses } from '../apiClient'
 
-const ScheduleForm = () => {
+let ClassesBooked = {}
+
+const ScheduleForm = (props) => {
+  const initialData = {
+    Monday: '',
+    Tuesday: '',
+    Wednesday: '',
+    Thursday: '',
+    Friday: '',
+    Saturday: '',
+    Sunday: ''
+  }
+
   const [classes, setClasses] = useState([])
+  const [formData, setFormData] = useState([initialData])
   useEffect(() => {
     getClasses()
       .then(classes => setClasses(classes))
       .catch(e => console.error(e.message))
   }, [])
 
+  function handleChange (e) {
+    const value = e.target.options[e.target.selectedIndex].value
+    const newFormData = {
+      ...formData,
+      [e.target.name]: value
+    }
+    setFormData(newFormData)
+  }
+
   function handleSubmit (e) {
     e.preventDefault()
-
+    ClassesBooked = formData
+    props.history.push('/bookedClasses')
+    return null
   }
   const Monday = classes.filter(classes =>
     classes.day === 'Monday')
@@ -33,38 +57,38 @@ const ScheduleForm = () => {
       <form id='choose-class'>
         <h4>Please choose your classes for the week.</h4>
         <label>Monday</label>
-        <select>
-          {Monday.map((Class, i) => <option key={i}>{Class.title}</option>)}
+        <select name="Monday" onChange={handleChange}>
+          {Monday.map((Class, i) => <option value={Class.title} key={i}>{Class.title}</option>)}
         </select>
         <label>Tuesday</label>
-        <select>
-          {Tuesday.map((Class, i) => <option key={i}>{Class.title}</option>)}
+        <select name="Tuesday" onChange={handleChange}>
+          {Tuesday.map((Class, i) => <option value={Class.title} key={i}>{Class.title}</option>)}
         </select>
         <label>Wednesday</label>
-        <select>
-          {Wednesday.map((Class, i) => <option key={i}>{Class.title}</option>)}
+        <select name="Wednesday" onChange={handleChange}>
+          {Wednesday.map((Class, i) => <option value={Class.title} key={i}>{Class.title}</option>)}
         </select>
         <label>Thursday</label>
-        <select>
-          {Thursday.map((Class, i) => <option key={i}>{Class.title}</option>)}
+        <select name="Thursday" onChange={handleChange}>
+          {Thursday.map((Class, i) => <option value={Class.title} key={i}>{Class.title}</option>)}
         </select>
         <label>Friday</label>
-        <select>
-          {Friday.map((Class, i) => <option key={i}>{Class.title}</option>)}
+        <select name="Friday" onChange={handleChange}>
+          {Friday.map((Class, i) => <option value={Class.title} key={i}>{Class.title}</option>)}
         </select>
         <label>Saturday</label>
-        <select>
-          {Saturday.map((Class, i) => <option key={i}>{Class.title}</option>)}
+        <select name="Saturday" onChange={handleChange}>
+          {Saturday.map((Class, i) => <option value={Class.title} key={i}>{Class.title}</option>)}
         </select>
         <label>Sunday</label>
-        <select>
-          {Sunday.map((Class, i) => <option key={i}>{Class.title}</option>)}
+        <select name="Sunday" onChange={handleChange}>
+          {Sunday.map((Class, i) => <option value={Class.title} key={i}>{Class.title}</option>)}
         </select>
-        <button className='btn'>Submit</button>
+        <button onClick={handleSubmit} className='btn'>Submit</button>
       </form>
     </div>
 
   )
 }
 
-export default ScheduleForm
+export { ScheduleForm, ClassesBooked }

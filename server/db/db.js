@@ -7,7 +7,7 @@ module.exports = {
 }
 
 function getClasses (db = database) {
-  return db('classes').select('title', 'teacher', 'description', 'day')
+  return db('classes').select('title', 'day', 'teacher', 'description', 'day')
 }
 
 function getDays (day, db = database) {
