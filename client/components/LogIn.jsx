@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Button } from 'semantic-ui-react'
 
 let userInfo = {}
 
@@ -30,8 +31,11 @@ const LogIn = (props) => {
           <input id="password" type="text" />
         </div>
         <div className="input">
-          <button onClick={handleSubmit}>Sign Up</button>
-          <button onClick={handleSubmit}>Log In</button>
+          <Button.Group>
+            <Button onClick={handleSubmit}>Sign Up</Button>
+            <Button.Or />
+            <Button positive onClick={handleSubmit}>Log In</Button>
+          </Button.Group>
         </div>
       </form>
     </div>

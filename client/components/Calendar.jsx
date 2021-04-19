@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getClasses } from '../apiClient'
+import { Table } from 'semantic-ui-react'
 
 const Calendar = () => {
   const [classes, setClasses] = useState([])
@@ -8,13 +9,20 @@ const Calendar = () => {
       .then(classes => setClasses(classes))
       .catch(e => console.error(e.message))
   }, [])
-
   return (
     <div>
-      <table id='calendar'>
-        <tr>{classes.map((Class, i) => <th key={i}>{Class.day}</th>)}</tr>
-        <tr>{classes.map((Class) => <td><h5>{Class.title}</h5><span>{Class.description}</span></td>)}</tr>
-      </table>
+      <Table inverted>
+        <Table.Header>
+          <Table.Row>
+            {classes.map((Class, i) => <Table.HeaderCell key={i}>{Class.day}</Table.HeaderCell>)}
+          </Table.Row>
+        </Table.Header>
+        <Table.Body>
+          <Table.Row>
+            {classes.map((Class) => <Table.Cell><h5>{Class.title}</h5><span>{Class.description}</span></Table.Cell>)}<Table.Cell>John</Table.Cell>
+          </Table.Row>
+        </Table.Body>
+      </Table>
     </div>
   )
 }

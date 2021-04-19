@@ -48,30 +48,37 @@ const ScheduleForm = (props) => {
         <h4>Please choose your classes for the week.</h4>
         <label>Monday</label>
         <select name="Monday" onChange={handleChange}>
+          <option value="" disabled selected>Choose a class</option>
           {Monday.map((Class, i) => <option value={Class.title} key={i}>{Class.title}</option>)}
         </select>
         <label>Tuesday</label>
         <select name="Tuesday" onChange={handleChange}>
+          <option value="" disabled selected>Choose a class</option>
           {Tuesday.map((Class, i) => <option value={Class.title} key={i}>{Class.title}</option>)}
         </select>
         <label>Wednesday</label>
         <select name="Wednesday" onChange={handleChange}>
+          <option value="" disabled selected>Choose a class</option>
           {Wednesday.map((Class, i) => <option value={Class.title} key={i}>{Class.title}</option>)}
         </select>
         <label>Thursday</label>
         <select name="Thursday" onChange={handleChange}>
+          <option value="" disabled selected>Choose a class</option>
           {Thursday.map((Class, i) => <option value={Class.title} key={i}>{Class.title}</option>)}
         </select>
         <label>Friday</label>
         <select name="Friday" onChange={handleChange}>
+          <option value="" disabled selected>Choose a class</option>
           {Friday.map((Class, i) => <option value={Class.title} key={i}>{Class.title}</option>)}
         </select>
         <label>Saturday</label>
         <select name="Saturday" onChange={handleChange}>
+          <option value="" disabled selected>Choose a class</option>
           {Saturday.map((Class, i) => <option value={Class.title} key={i}>{Class.title}</option>)}
         </select>
         <label>Sunday</label>
         <select name="Sunday" onChange={handleChange}>
+          <option value="" disabled selected>Choose a class</option>
           {Sunday.map((Class, i) => <option value={Class.title} key={i}>{Class.title}</option>)}
         </select>
         <button onClick={handleSubmit} className='btn'>Submit</button>
