@@ -7,7 +7,7 @@ const BookedClasses = () => {
   const classes = Object.values(ClassesBooked)
   return (
     <div>
-      <Table inverted id='booked-classes'>
+      <Table celled id='booked-classes'>
         <Table.Header>
           <Table.Row>
             {days.map((Class, i) => <Table.HeaderCell key={i}>{Class}</Table.HeaderCell>)}
@@ -15,7 +15,7 @@ const BookedClasses = () => {
         </Table.Header>
         <Table.Body>
           <Table.Row>
-            {classes.map((Class, j) => <Table.Cell><h5>{Class}</h5></Table.Cell>)}
+            {classes.map((Class, j) => <Table.Cell key={j}><h5>{Class}</h5></Table.Cell>)}
           </Table.Row>
         </Table.Body>
       </Table>

@@ -29,12 +29,10 @@ const Calendar = () => {
 
   return (
     <div>
-      <Table celled id='calendar'>
+      <Table celled id='calendar' class="ui inverted red table">
         <Table.Header>
           <Table.Row>
-            {Object.keys(days).map((day, i) => <Table.HeaderCell key={i}>
-              {day} <Class schedule={days} day={day} />
-              </Table.HeaderCell>)}
+            {Object.keys(days).map((day, i) => <Table.HeaderCell key={i}>{day}<Class schedule={days} day={day} /></Table.HeaderCell>)}
           </Table.Row>
         </Table.Header>
       </Table>
@@ -42,4 +40,4 @@ const Calendar = () => {
   )
 }
 
-export default Calendar 
+export default Calendar

@@ -24,7 +24,7 @@ const ScheduleForm = (props) => {
   function handleSubmit (e) {
     e.preventDefault()
     ClassesBooked = formData
-    props.history.push('/bookedClasses')
+    props.history.push('/home/bookedClasses')
     return null
   }
   const Monday = classes.filter(classes =>
