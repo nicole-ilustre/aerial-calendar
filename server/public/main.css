@@ -42,23 +42,29 @@ select {
 }
 
 #calendar {
-    float: right;
     position: absolute; 
     bottom: 0;
-    right: 0;
-    border: 1px solid black;
-    border-radius: 5%;
-    /* border-bottom: 20px */
+    right: 0
 }
 
 tr, td, h5 {
     border: 1px solid black;
     text-align: center;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto
 }
 
 span {
     display: inline-block;
     width: 120px
+}
+
+#booked-classes {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto
+}
+
+#table-column {
+    display: table-column
 }
