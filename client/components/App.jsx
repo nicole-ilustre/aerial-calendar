@@ -11,7 +11,7 @@ const App = () => {
   return (
     <Router>
       <Route exact path='/' component={LogIn}></Route>
-      <Route path='/home/schedule/form' component={ScheduleForm}></Route>
+      <Route path='/home/schedule' component={ScheduleForm}></Route>
       <Route path='/home/bookedClasses' component={BookedClasses}></Route>
       <Route path='/home/schedule' component={Calendar}></Route>
       <Route path='/home' component={Navigation}></Route>
