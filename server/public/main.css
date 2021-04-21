@@ -14,13 +14,16 @@ body {
 
 label, h4 {
     margin-left: 5px;
-    margin-right: 5px
+    margin-right: 5px;
 }
 #choose-class, #schedule {
     text-align: left;
     float: left;
     border: 1px solid black;
-    border-radius: 5%
+    border-radius: 5%;
+    margin-left: 10px;
+    padding-left: 15px;
+    margin-top: 100px
 }
 
 label {
@@ -38,12 +41,14 @@ select {
 
 .btn {
     margin-left: 40%;
-    margin-bottom: 10px
+    margin-bottom: 10px;
+    margin-top: 10px
 }
 
 #calendar {
-    position: absolute; 
-    bottom: 0;
+    margin-top: 100px;
+    width: 80%;
+    position: absolute;
     right: 0
 }
 
@@ -60,11 +65,9 @@ span {
 }
 
 #booked-classes {
+    position: absolute;
     width: 80%;
     margin-left: auto;
-    margin-right: auto
-}
-
-#table-column {
-    display: table-column
+    margin-right: auto;
+    margin-top: 100px;
 }
