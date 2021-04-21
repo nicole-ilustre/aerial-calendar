@@ -32,7 +32,7 @@ export default class NavBar extends Component {
 
         <Menu.Menu position='right'>
           <Menu.Item>
-            <Button primary>Log Out</Button>
+            <Link to={'/'}><Button primary>Log Out</Button></Link>
           </Menu.Item>
         </Menu.Menu>
       </Menu>
