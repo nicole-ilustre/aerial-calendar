@@ -6,6 +6,7 @@ import { LogIn } from './LogIn'
 import Calendar from './Calendar'
 import BookedClasses from './BookedClasses'
 import Navigation from './Navigation'
+import ClassInfo from './ClassInfo'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Route path='/home/schedule' component={ScheduleForm}></Route>
       <Route path='/home/bookedClasses' component={BookedClasses}></Route>
       <Route path='/home/schedule' component={Calendar}></Route>
+      <Route path='/home/classInfo' component={ClassInfo}></Route>
     </Router>
   )
 }

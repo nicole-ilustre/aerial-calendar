@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getClasses } from '../apiClient'
-import Class from './Class.jsx'
+import { Class } from './Class.jsx'
 import { Table } from 'semantic-ui-react'
 
 const Calendar = () => {
