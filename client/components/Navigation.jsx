@@ -12,6 +12,8 @@ export default class NavBar extends Component {
     const { activeItem } = this.state
 
     return (
+      <div>
+      <img className= "logo-header" src='./images/aerial-logo.png' />
       <Menu size='tiny'>
         <div className="header item">Welcome, {userInfo.username}</div>
         <Link to={'/home/schedule'}><Menu.Item
@@ -36,6 +38,7 @@ export default class NavBar extends Component {
           </Menu.Item>
         </Menu.Menu>
       </Menu>
+      </div>
     )
   }
 }

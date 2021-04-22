@@ -23,7 +23,7 @@ label, h4 {
     border-radius: 5%;
     margin-left: 10px;
     padding-left: 15px;
-    margin-top: 100px
+    margin-top: 50px
 }
 
 label {
@@ -46,7 +46,7 @@ select {
 }
 
 #calendar {
-    margin-top: 100px;
+    margin-top: 50px;
     width: 80%;
     position: absolute;
     right: 0
@@ -65,9 +65,19 @@ span {
 }
 
 #booked-classes {
-    position: absolute;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 100px;
+    margin-top: 50px;
+}
+
+img {
+    width: 250px;
+    height: 150px;
+}
+
+.logo-header {
+    width: 100px;
+    height: 60px;
+    float: left
 }

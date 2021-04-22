@@ -20,6 +20,7 @@ const LogIn = (props) => {
   }
   return (
     <div>
+      <img src='./images/aerial-logo.png' />
       <h1>Welcome to your Aerial Calendar</h1>
       <form>
         <div className="input">
