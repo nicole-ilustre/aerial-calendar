@@ -12,7 +12,7 @@ const Class = (props) => {
   const todaysClasses = props.schedule[props.day]
   return (
     <>
-      {todaysClasses.map((classes, i) => <Table.Row name='chevron left' key={i}><Link to={'/home/classInfo'}><Table.Cell key={i} onClick={() => handleClick(classes)} value={classes.teacher}>{classes.title}</Table.Cell></Link></Table.Row>)}
+      {todaysClasses.map((classes, i) => <Table.Row class="center aligned" name='chevron left' key={i}><Table.Cell key={i} onClick={() => handleClick(classes)} value={classes.teacher}><Link to={'/home/classInfo'} className='cells'>{classes.title}</Link></Table.Cell></Table.Row>)}
     </>
   )
 }
