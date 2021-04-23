@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getClasses } from '../apiClient'
+import ClassOptions from './ClassOptions'
 
 let ClassesBooked = {}
 
@@ -27,60 +28,29 @@ const ScheduleForm = (props) => {
     props.history.push('/home/bookedClasses')
     return null
   }
-  const Monday = classes.filter(classes =>
-    classes.day === 'Monday')
-  const Tuesday = classes.filter(classes =>
-    classes.day === 'Tuesday')
-  const Wednesday = classes.filter(classes =>
-    classes.day === 'Wednesday')
-  const Thursday = classes.filter(classes =>
-    classes.day === 'Thursday')
-  const Friday = classes.filter(classes =>
-    classes.day === 'Friday')
-  const Saturday = classes.filter(classes =>
-    classes.day === 'Saturday')
-  const Sunday = classes.filter(classes =>
-    classes.day === 'Sunday')
+
+  const days = {
+    Monday: [],
+    Tuesday: [],
+    Wednesday: [],
+    Thursday: [],
+    Friday: [],
+    Saturday: [],
+    Sunday: []
+  }
+  Object.keys(days).forEach(day => {
+    classes.forEach(Class => {
+      if (Class.day === day) {
+        days[day].push(Class)
+      }
+    })
+  })
 
   return (
     <div>
       <form id='choose-class'>
         <h4>Please choose your classes for the week.</h4>
-        <label>Monday</label>
-        <select name="Monday" onChange={handleChange}>
-          <option value="" disabled selected>Choose a class</option>
-          {Monday.map((Class, i) => <option value={Class.title} key={i}>{Class.title}</option>)}
-        </select>
-        <label>Tuesday</label>
-        <select name="Tuesday" onChange={handleChange}>
-          <option value="" disabled selected>Choose a class</option>
-          {Tuesday.map((Class, i) => <option value={Class.title} key={i}>{Class.title}</option>)}
-        </select>
-        <label>Wednesday</label>
-        <select name="Wednesday" onChange={handleChange}>
-          <option value="" disabled selected>Choose a class</option>
-          {Wednesday.map((Class, i) => <option value={Class.title} key={i}>{Class.title}</option>)}
-        </select>
-        <label>Thursday</label>
-        <select name="Thursday" onChange={handleChange}>
-          <option value="" disabled selected>Choose a class</option>
-          {Thursday.map((Class, i) => <option value={Class.title} key={i}>{Class.title}</option>)}
-        </select>
-        <label>Friday</label>
-        <select name="Friday" onChange={handleChange}>
-          <option value="" disabled selected>Choose a class</option>
-          {Friday.map((Class, i) => <option value={Class.title} key={i}>{Class.title}</option>)}
-        </select>
-        <label>Saturday</label>
-        <select name="Saturday" onChange={handleChange}>
-          <option value="" disabled selected>Choose a class</option>
-          {Saturday.map((Class, i) => <option value={Class.title} key={i}>{Class.title}</option>)}
-        </select>
-        <label>Sunday</label>
-        <select name="Sunday" onChange={handleChange}>
-          <option value="" disabled selected>Choose a class</option>
-          {Sunday.map((Class, i) => <option value={Class.title} key={i}>{Class.title}</option>)}
-        </select>
+        {Object.keys(days).map((day, i) => <div key={i}><label key={i}>{day}</label><select key={i} name={day} onChange={handleChange}><option value="" disabled selected>Choose a class</option><ClassOptions schedule={days} day={day} /> </select></div>)}
         <button onClick={handleSubmit} className='btn'>Submit</button>
       </form>
     </div>

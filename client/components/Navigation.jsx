@@ -16,21 +16,21 @@ export default class NavBar extends Component {
         <img className= "logo-header" src='./images/aerial-logo.png' />
         <Menu size='tiny'>
           <div className="header item">Welcome, {userInfo.username}</div>
-          <Link to={'/home/schedule'}><Menu.Item
+          <Menu.Item as={ Link } to='/home/schedule'
             name='home'
             active={activeItem === 'home'}
             onClick={this.handleItemClick}
-          /></Link>
-          <Link to={'/home/account'}><Menu.Item
+          />
+          <Menu.Item as={ Link } to='/home/account'
             name='account'
             active={activeItem === 'account'}
             onClick={this.handleItemClick}
-          /></Link>
-          <Link to={'/home/schedule/bookedClasses'}><Menu.Item
+          />
+          <Menu.Item as={ Link } to='/home/schedule/bookedClasses'
             name='my classes'
             active={activeItem === 'my classes'}
             onClick={this.handleItemClick}
-          /></Link>
+          />
 
           <Menu.Menu position='right'>
             <Menu.Item>
