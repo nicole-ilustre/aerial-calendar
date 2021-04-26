@@ -15,7 +15,7 @@ export default class NavBar extends Component {
       <div>
         <img className= "logo-header" src='./images/aerial-logo.png' />
         <Menu size='tiny'>
-          <div className="header item">Welcome, {userInfo.username}</div>
+          <div className="header item">Welcome, {userInfo.name}</div>
           <Menu.Item as={ Link } to='/home/schedule'
             name='home'
             active={activeItem === 'home'}
