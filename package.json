@@ -41,6 +41,7 @@
     ]
   },
   "dependencies": {
+    "authenticare": "^0.4.9",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "knex": "^0.95.4",
