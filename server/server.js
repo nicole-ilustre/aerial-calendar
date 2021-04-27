@@ -11,6 +11,6 @@ server.use(express.static(path.join(__dirname, './public')))
 server.use(cors('*'))
 
 server.use('/v1/classes', classes)
-server.use('/', auth)
+server.use('/api/v1', auth)
 
 module.exports = server

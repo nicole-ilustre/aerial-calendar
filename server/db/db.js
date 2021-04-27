@@ -5,14 +5,14 @@ const { generateHash } = require('authenticare/server')
 module.exports = {
   getClasses,
   getDays,
-  getUser,
+  getUserByName,
   userExists,
   createUser
 }
-function userExists (name, db = database) {
+function userExists (username, db = database) {
   return db('users')
     .count('id as n')
-    .where('name', name)
+    .where('username', username)
     .then(count => {
       return count[0].n > 0
     })
@@ -26,15 +26,15 @@ function getDays (day, db = database) {
     .where('day', day)
 }
 
-function getUser (name, db = database) {
+function getUserByName (username, db = database) {
   return db('users').select()
-    .where('name', name)
+    .where('username', username)
     .first()
 }
 
 function createUser (user, db = database) {
-  const { name, password } = user
-  return userExists(name, db)
+  const { username, password } = user
+  return userExists(username, db)
     .then(exists => {
       if (exists) {
         return Promise.reject(new Error('Username already taken'))
@@ -44,6 +44,6 @@ function createUser (user, db = database) {
     .then(() => generateHash(password))
     .then(passwordHash => {
       return db('users')
-        .insert({ name: name, hash: passwordHash })
+        .insert({ username: username, hash: passwordHash })
     })
 }
