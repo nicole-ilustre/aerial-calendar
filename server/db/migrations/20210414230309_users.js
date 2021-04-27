@@ -1,7 +1,8 @@
-exports.up = function(knex) {
+exports.up = function (knex) {
   return knex.schema.createTable('users', (table) => {
     table.increments('id')
-    table.string('name')
+    table.string('username')
+    table.binary('hash')
     table.string('Monday')
     table.string('Tuesday')
     table.string('Wednesday')
@@ -10,8 +11,8 @@ exports.up = function(knex) {
     table.string('Saturday')
     table.string('Sunday')
   })
-};
+}
 
-exports.down = function(knex) {
+exports.down = function (knex) {
   return knex.schema.dropTable('users')
-};
+}

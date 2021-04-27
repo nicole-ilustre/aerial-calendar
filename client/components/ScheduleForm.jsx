@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getClasses } from '../apiClient'
 import ClassOptions from './ClassOptions'
+import { ifAuthenticated } from './Authenticated'
 
 let ClassesBooked = {}
 
@@ -47,13 +48,15 @@ const ScheduleForm = (props) => {
   })
 
   return (
-    <div>
-      <form id='choose-class'>
-        <h4>Please choose your classes for the week.</h4>
-        {Object.keys(days).map((day, i) => <div key={i}><label key={i}>{day}</label><select key={i} name={day} onChange={handleChange}><option value="" disabled selected>Choose a class</option><ClassOptions schedule={days} day={day} /> </select></div>)}
-        <button onClick={handleSubmit} className='btn'>Submit</button>
-      </form>
-    </div>
+    <ifAuthenticated>
+      <div>
+        <form id='choose-class'>
+          <h4>Please choose your classes for the week.</h4>
+          {Object.keys(days).map((day, i) => <div key={i}><label key={i}>{day}</label><select key={i} name={day} onChange={handleChange}><option value="" disabled selected>Choose a class</option><ClassOptions schedule={days} day={day} /> </select></div>)}
+          <button onClick={handleSubmit} className='btn'>Submit</button>
+        </form>
+      </div>
+    </ifAuthenticated>
 
   )
 }

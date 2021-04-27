@@ -1,22 +1,52 @@
 import React, { useState } from 'react'
 import { Button } from 'semantic-ui-react'
+import { register, signIn, isAuthenticated } from 'authenticare/client'
+import { baseApiUrl as baseUrl } from '../config'
 
 let userInfo = {}
 
 const LogIn = (props) => {
-  const [loginData, setLoginData] = useState({ username: '' })
+  const [loginData, setLoginData] = useState({ username: '', password: '' })
+
   function handleChange (e) {
     const newLoginData = {
+      ...loginData,
       [e.target.name]: e.target.value
     }
     setLoginData(newLoginData)
   }
 
-  function handleSubmit (e) {
+  function handleRegister (e) {
     e.preventDefault()
     userInfo = loginData
-    props.history.push('/home/schedule/form')
-    return null
+    const { username, password } = loginData
+    register({ username, password }, { baseUrl })
+      .then(() => {
+        if (isAuthenticated()) {
+          props.history.push('/home/schedule/form')
+        }
+        return null
+      })
+      .catch(err => {
+        console.log(err)
+      }
+      )
+  }
+
+  function handleLogIn (e) {
+    e.preventDefault()
+    userInfo = loginData
+    const { username, password } = loginData
+    signIn({ username, password }, { baseUrl })
+      .then(() => {
+        if (isAuthenticated()) {
+          props.history.push('/home/schedule/form')
+        }
+        return null
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
   return (
     <div>
@@ -29,13 +59,13 @@ const LogIn = (props) => {
         </div>
         <div className="input">
           <label htmlFor="password">Password:</label>
-          <input id="password" type="text" />
+          <input id="password" name="password" value={loginData.password} onChange={handleChange} type="text" />
         </div>
         <div className="input">
           <Button.Group>
-            <Button onClick={handleSubmit}>Sign Up</Button>
+            <Button onClick={handleRegister}>Sign Up</Button>
             <Button.Or />
-            <Button positive onClick={handleSubmit}>Log In</Button>
+            <Button positive onClick={handleLogIn}>Log In</Button>
           </Button.Group>
         </div>
       </form>

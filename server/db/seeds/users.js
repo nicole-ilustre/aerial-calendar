@@ -1,11 +1,8 @@
-
-exports.seed = function(knex) {
-  // Deletes ALL existing entries
+exports.seed = function (knex) {
   return knex('users').del()
     .then(function () {
-      // Inserts seed entries
       return knex('users').insert([
-        { id: 1, name: 'Nicole', Monday: '', Tuesday: '', Wednesday: '', Thursday: '', Friday: '', Saturday: '', Sunday: ''}
-      ]);
-    });
-};
+        { id: 1, username: 'Nicole', hash: '', Monday: '', Tuesday: '', Wednesday: '', Thursday: '', Friday: '', Saturday: '', Sunday: ''}
+      ])
+    })
+}

@@ -3,7 +3,7 @@ import { classDetails } from './Class'
 
 export default function ClassInfo () {
   return (
-    <table className="ui celled table">
+    <table className="ui celled table" id="class-info">
       <thead>
         <tr><th>Class Title</th>
           <th>About Class</th>
